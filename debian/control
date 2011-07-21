@@ -1,0 +1,14 @@
+Source: vdr-plugin-sleeptimer
+Section: video
+Priority: extra
+Maintainer: Tobias Grimm <tg@e-tobi.net>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 5), cdbs, dpatch, vdr-dev (>= 1.6.0-5)
+Standards-Version: 3.8.3
+
+Package: vdr-plugin-sleeptimer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Sleeptimer plugin for vdr
+ Allows to set a timer for powering off vdr once. 

@@ -8,25 +8,42 @@
 
 #include "i18n.h"
 
+#if VDRVERSNUM < 10507
+
 const tI18nPhrase Phrases[] = {
   { "Not active",// English
-    "Nicht aktiv", //Deutch
+    "Nicht aktiv", //Deutsch
     "",// Slovenski
     "",// Italiano
     "",// Nederlands
-    "",// Português
+    "",// PortuguÃªs
     "",// Francais
     "",// Norsk
     "Ei aktiivinen",// Suomi
     "",// Polski
-    "",// Español
+    "",// EspaÃ±ol
     "",// Greek
     "",// svenska
     "",// Romaneste
     "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif    
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif    
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif    
   },
-  { "Disable Sleep-Timer in %d minutes",
-		"Sleep-Timer in %d Minuten abbrechen",
+  { "Disable sleeptimer in %d minutes",
+		"Sleeptimer in %d Minuten abbrechen",
     "",// TODO
     "",// TODO
     "",// TODO
@@ -34,63 +51,154 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "Peruuta %d minuutin ajastin?",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Abort Sleep-Timer?",
-		"Sleep-Timer abbrechen?",
+  { "Disable sleeptimer?",
+		"Sleeptimer abbrechen?",
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
-    "Keskeytä ajastin",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "KeskeytÃ¤ ajastin",// Suomi
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Activate Sleep-Timer at %i:%0.2i?",
-		"Sleep-Timer um %i:%0.2i aktivieren?",
+  { "Timespan shorter than 2 minutes",
+		"Zeitspanne kÃ¼rzer 2 Minuten",
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
-    "Aktivoi ajastin %i:%0.2i?",// Suomi
+    "",// suomi
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Activate sleeptimer at %i:%.2i?",
+		"Sleeptimer um %i:%.2i aktivieren?",
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
+    "Aktivoi ajastin %i:%.2i?",// Suomi
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Activate Sleep-Timer in %d minutes?",
-		"Sleep-Timer in %d Minuten aktivieren?",
+  { "Activate sleeptimer in %i minutes?",
+		"Sleeptimer in %i Minuten aktivieren?",
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
     "",// TODO
-    "Aktivoi %d minuutin ajastin?",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "Aktivoi %i minuutin ajastin?",// Suomi
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Sleep-Timer",
-		"Sleep-Timer",
+  { "Sleeptimer",
+		"Sleeptimer",
     "",// TODO
     "",// TODO
     "",// TODO
@@ -98,12 +206,27 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "Ajastin",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
   { "Action",
 		"Aktion",
@@ -114,15 +237,30 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "Toiminto",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
   { "Going to sleep in about one minute",
-		"Sleep-Timer in einer Minute",
+		"Sleeptimer in einer Minute",
     "",// TODO
     "",// TODO
     "",// TODO
@@ -130,15 +268,61 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "Ajastin aktivoituu noin minuutin kuluttua",// Suomi
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
-    "",// TODO
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Shutdown-Time",
-	  "Shutdown-Zeit",
+  { "Default Timespan [min]",
+		"Standard-Zeitspanne [min]",
+    "",// TODO
+    "",// TODO
+    "",// TODO
+    "",// TODO
+    "",// TODO
+    "",// TODO
+    "",// suomi
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+  { "Shutdown (time)",
+	  "Shutdown (Uhrzeit)",
     "",
     "",
     "",
@@ -146,15 +330,30 @@ const tI18nPhrase Phrases[] = {
     "",
     "",
     "Sammutusaika", // Suomi
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
-  { "Shutdown-Minutes",
-	  "Shutdown-Minuten",
+  { "Shutdown [min]",
+	  "Shutdown [min]",
     "",
     "",
     "",
@@ -162,13 +361,409 @@ const tI18nPhrase Phrases[] = {
     "",
     "",
     "Sammutus minuutteina",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
   },
+  
+  
+  { "Sleeptimer disabled",
+	  "Sleeptimer inaktiv",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  { "Sleeptimer in %i minutes",
+	  "Sleeptimer in %i Minuten",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  { "Confirm",
+	  "BestÃ¤tigen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Use default for autoswitch",
+	  "Automatik mit Standardzeitspanne",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Enable sleeptimer in %i minutes?",
+	  "Sleeptimer in %i Minuten aktivieren?",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Disable",
+	  "Deaktivieren",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Autoswitch",
+	  "Automatisch",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  { "Sleeptimer in %i minutes",
+	  "Sleeptimer in %i Minuten",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  { "Shutdown",
+	  "Herunterfahren",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  { "Mute",
+	  "Stumm schalten",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  { "Yes",
+	  "Ja",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  { "No",
+	  "Nein",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },  
+  
+  
   { NULL }
   };
 
+#endif

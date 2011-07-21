@@ -1,0 +1,97 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Hannu Savolainen <hannu@opensound.com>, 2002
+# Jaakko Hyv‰tti <jaakko@hyvatti.iki.fi>, 2002
+# Niko Tarnanen <niko.tarnanen@hut.fi>, 2003
+# Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdrportal_midas <at> gmx <dot> de>\n"
+"POT-Creation-Date: 2011-07-20 23:03+0200\n"
+"PO-Revision-Date: 2011-07-20 22:51+0200\n"
+"Last-Translator: Rolf Ahrenberg <rahrenbe@cc.hut.fi>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Sleeptimer"
+msgstr "Ajastin"
+
+msgid "Autoswitch"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Not active"
+msgstr "Ei aktiivinen"
+
+msgid "Shutdown [min]"
+msgstr "Sammutus minuutteina"
+
+msgid "Shutdown (time)"
+msgstr "Sammutusaika"
+
+#, c-format
+msgid "Disable sleeptimer in %d minutes"
+msgstr "Peruuta %d minuutin ajastin?"
+
+msgid "Default Timespan [min]"
+msgstr ""
+
+msgid "Action"
+msgstr "Toiminto"
+
+msgid "Shutdown"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Use default for autoswitch"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Going to sleep in about one minute"
+msgstr "Ajastin aktivoituu noin minuutin kuluttua"
+
+msgid "Disable Sleeptimer?"
+msgstr ""
+
+#, c-format
+msgid "Activate sleeptimer at %i:%.2i?"
+msgstr "Aktivoi ajastin %i:%.2i?"
+
+msgid "Timespan shorter than 2 minutes"
+msgstr ""
+
+#, c-format
+msgid "Activate sleeptimer in %i minutes?"
+msgstr "Aktivoi %i minuutin ajastin?"
+
+#, c-format
+msgid "Sleeptimer in %i minutes"
+msgstr ""
+
+msgid "Sleeptimer disabled"
+msgstr ""
+
+#, c-format
+msgid "Enable sleeptimer in %i minutes?"
+msgstr ""
+
+msgid "Disable sleeptimer?"
+msgstr "Keskeyt√§ ajastin"
