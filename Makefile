@@ -40,7 +40,7 @@ VDRVERSION = $(shell grep 'define VDRVERSION ' $(VDRDIR)/config.h | awk '{ print
 ### The name of the distribution archive:
 
 ARCHIVE = $(PLUGIN)-$(VERSION)
-PACKAGE = vdr-$(ARCHIVE)
+PACKAGE = vdr-plugin-$(ARCHIVE)
 
 ### Includes and Defines (add further entries here):
 
