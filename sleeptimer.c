@@ -248,7 +248,7 @@ MainMenu::MainMenu(void) : cOsdMenu("Sleeptimer", 20)
 
 cOsdObject *cPluginSleeptimer::MainMenuAction(void)
 {
- if (Interface->GetKey(false)==55 && !process_red) return new MainMenu();
+ if (Interface->GetKey(false)==kNone && !process_red) return new MainMenu();
  
  if (process_red) process_red=false;
  
