@@ -14,7 +14,7 @@
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8";
+static const char *VERSION        = "0.8.1-WIP201107292321";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
