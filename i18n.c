@@ -16,12 +16,12 @@ const tI18nPhrase Phrases[] = {
     "",// Slovenski
     "",// Italiano
     "",// Nederlands
-    "",// PortuguÃªs
+    "",// Português
     "",// Francais
     "",// Norsk
     "Ei aktiivinen",// Suomi
     "",// Polski
-    "",// EspaÃ±ol
+    "",// Español
     "",// Greek
     "",// svenska
     "",// Romaneste
@@ -81,7 +81,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "",// TODO
-    "KeskeytÃ¤ ajastin",// Suomi
+    "Keskeytä ajastin",// Suomi
     "",// Polski
     "",// Espaqol
     "",// Greek
@@ -105,7 +105,7 @@ const tI18nPhrase Phrases[] = {
 #endif
   },
   { "Timespan shorter than 2 minutes",
-		"Zeitspanne kÃ¼rzer 2 Minuten",
+		"Zeitspanne kürzer 2 Minuten",
     "",// TODO
     "",// TODO
     "",// TODO
@@ -448,7 +448,7 @@ const tI18nPhrase Phrases[] = {
   },  
   
   { "Confirm",
-	  "BestÃ¤tigen",
+	  "Bestätigen",
     "",
     "",
     "",

@@ -9,22 +9,23 @@
 #include <vdr/plugin.h>
 #include <vdr/interface.h>
 #include <vdr/device.h>
+#include <vdr/status.h>
 
 #if VDRVERSNUM < 10507
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8.1-WIP201107292321";
+static const char *VERSION        = "0.8.1-WIP201107302304";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
-int method = 0;
+int method = 2;
 int default_timespan=15;
 int shutdown_time = 0;
 int shutdown_minutes = 2;
 bool start_w_default=false;
 bool do_confirm=false;
-const char *command = "/sbin/poweroff";
+char* command = (char*)"/sbin/poweroff";
 bool process_red=false;
 
 #define ARRAYLENGTH 9
@@ -112,7 +113,6 @@ private:
   static time_t sleepat;
   time_t lastaction;
   void HotkeyAction();
-  eKeys ShowMessage(cString msg);
   
 public:
   cPluginSleeptimer(void);
@@ -130,6 +130,7 @@ public:
 
   static time_t getSleeptimer() { return cPluginSleeptimer::sleepat; }
   static void setSleeptimer(time_t tt) { cPluginSleeptimer::sleepat=tt; }
+  static eKeys ShowMessage(cString msg);
 };
 
 cPluginSleeptimer::cPluginSleeptimer(void)
@@ -142,6 +143,7 @@ cPluginSleeptimer::cPluginSleeptimer(void)
 
 //Initialization of static members
 time_t cPluginSleeptimer::sleepat=0;
+
 
 cPluginSleeptimer::~cPluginSleeptimer()
 {
@@ -161,7 +163,7 @@ bool cPluginSleeptimer::ProcessArgs(int argc, char *argv[])
 	while((c = getopt(argc, argv, "e:")) != -1 ) {
 		switch(c) {
 			case 'e': 
-				command = optarg;
+				command = (char*)optarg;
 				break;
 			default: return false;
 		}
@@ -264,6 +266,8 @@ private:
 	int timespan;
 	int setup_start_w_default;
 	int setup_do_confirm;
+	char* setup_command;
+	const char* methods[3];
 public:
 	cMenuSetupSleeptimer(void);
 	virtual void Store(void);
@@ -296,6 +300,8 @@ bool cPluginSleeptimer::SetupParse(const char *Name, const char *Value)
            }
            else if (!strcasecmp(Name,"Confirmation"))
             do_confirm=atoi(Value);
+           else if (!strcasecmp(Name,"Command"))
+            command=(char*)Value;
  else return false;
  return true;
 }
@@ -307,9 +313,18 @@ cMenuSetupSleeptimer::cMenuSetupSleeptimer(void)
  new_method = method;
  timespan = default_timespan;
  setup_start_w_default=start_w_default;
+ setup_command=command;
  setup_do_confirm=do_confirm;
+ 
+ methods[0]=tr("Shutdown");
+ methods[1]=tr("Mute");
+ methods[2]=tr("Execute command");
+ 
+ char* allowed_chars=(char*)" abcdefghijklmnopqrstuvwxyz0123456789-.,#~\\^$[]|()*+?{}/:%@&";
+ 
  Add(new cMenuEditIntItem(tr("Default Timespan [min]"),  &timespan, 2));
- Add(new cMenuEditBoolItem(tr("Action"), &new_method,  tr("Shutdown"), tr("Mute"))); 
+ Add(new cMenuEditStraItem(tr("Action"), &new_method, 3, methods)); 
+ Add(new cMenuEditStrItem(tr("Command"), setup_command, 255, allowed_chars));
  Add(new cMenuEditBoolItem(tr("Use default for autoswitch"), &setup_start_w_default, tr("No"), tr("Yes")));
  Add(new cMenuEditBoolItem(tr("Confirm"), &setup_do_confirm, tr("No"), tr("Yes")));
 }
@@ -318,6 +333,7 @@ void cMenuSetupSleeptimer::Store(void)
 {
  SetupStore("Method", method = new_method);
  SetupStore("DefaultTimespan", default_timespan=timespan);
+ SetupStore("Command"), command=(char*)setup_command;
  SetupStore("StartWithDefault", start_w_default=setup_start_w_default);
  SetupStore("Confirmation", do_confirm=setup_do_confirm);
  if (start_w_default) 
@@ -366,9 +382,9 @@ void cBackgroundSleeptimer::Action(void)
 
    if(method == 0) 
    {
-    isyslog("plugin-sleeptimer: executing \"%s\"", command);
-    if(SystemExec(command) == -1)
-     isyslog("plugin-sleeptimer: errror while executing \"%s\"!", command);
+    isyslog("plugin-sleeptimer: pressing key Power internally");
+    if(!(cRemote::Put(kPower)))
+     isyslog("plugin-sleeptimer: ERROR: internal keypress did not succeed \"%s\"!", command);
    }
 
    if(method == 1) 
@@ -377,12 +393,20 @@ void cBackgroundSleeptimer::Action(void)
     if(!cDevice::PrimaryDevice()->IsMute())
      cDevice::PrimaryDevice()->ToggleMute();
    }
+
+   if(method == 2) 
+   {
+    dsyslog("plugin-sleeptimer: executing \"%s\"", command);
+    if(SystemExec(command) == -1)
+     isyslog("plugin-sleeptimer: ERROR while executing \"%s\"!", command);
+   }
+
   } 
   else //timeout not reached yet
   {
    if((cPluginSleeptimer::getSleeptimer() - 60) <= time(NULL)) 
    {
-    Skins.Message(mtInfo,tr("Going to sleep in about one minute"),0);
+    Skins.QueueMessage(mtInfo,tr("Going to sleep in about one minute"),0,-1);
     isyslog("plugin-sleeptimer: going to sleep in about one minute");
    }
   }
@@ -529,7 +553,7 @@ void cPluginSleeptimer::HotkeyAction()
     }
    } 
   }
-  eKeys k=ShowMessage(msg);
+  eKeys k=cPluginSleeptimer::ShowMessage(msg);
 
 
 // ***********************
@@ -575,6 +599,7 @@ void cPluginSleeptimer::HotkeyAction()
 
   if (k==kOk || (k==kNone && !do_confirm))
   {
+   if (first_action) break;
    if (next_sleepmin_index > 0)
    {
     sleepat=now + autoswitch_vals[next_sleepmin_index] * 60;
@@ -648,22 +673,17 @@ void cPluginSleeptimer::HotkeyAction()
 }
 
 
-// ***********************
-// ***** ShowMessage *****
-// ***********************
-
 eKeys cPluginSleeptimer::ShowMessage(cString msg)
 {
  cSkinDisplayMessage *csdmsg=Skins.Current()->DisplayMessage();
  cSkinDisplay::Current()->SetMessage(mtInfo,*msg);
  cSkinDisplay::Current()->Flush();
-
+   
  Interface->GetKey(false);
  eKeys retval= Interface->Wait(5);
-
+     
  delete csdmsg;
- csdmsg=NULL;
-
+       
  return retval;
 }
 

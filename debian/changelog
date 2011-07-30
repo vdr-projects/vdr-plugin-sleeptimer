@@ -1,3 +1,10 @@
+vdr-plugin-sleeptimer (0.8.1-201107302302-1) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * Pre 0.8.1 testing
+
+ -- Midas <vdrportal_midas at gmx dot de>  Thu, 21 Jul 2011 07:29:16 +0200
+
 vdr-plugin-sleeptimer (0.8-1) experimental; urgency=low
 
   * Non-maintainer upload.
