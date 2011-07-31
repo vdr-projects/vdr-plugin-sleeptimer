@@ -13,7 +13,7 @@ See the file COPYING for license information.
 *** Command Line Parameters ***
 *******************************
 
-use -e parameter to redefine the command for shutdown. By default /sbin/poweroff is called
+use -e parameter to redefine the command for shutdown (Default: /sbin/poweroff).
 
 
 ********************
@@ -24,9 +24,12 @@ Default Timespan [min]:
 -defines the default timespan till shutdown, which is shown in the plugins main menu entry
 
 Action:
--Shutdown represents the command to be executed on sleeptimer timeout (default: /sbin/poweroff)
+-'Shutdown' sends vdr an internal signal to shutdown. Represents exactly the same way
+ as if the Power key would be pressed. This way vdr itself handles the shutdown
+ procedure, delays the shutdown if needed, sets timers correctly etc.
+-'Mute' does not execute any command, but mutes audio if not already muted
+-'Execute command' defines the command to be executed on sleeptimer timeout (default: /sbin/poweroff)
  overridden by command line parameter -e (see above)
--Mute does not execute any command, but mutes audio if not already muted
 
 Use Autoswitch with default:
 -Integrates the default timespan in the predefined values and makes the Autoswitch function
