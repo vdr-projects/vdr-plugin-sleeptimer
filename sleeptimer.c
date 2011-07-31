@@ -446,7 +446,7 @@ eOSState MainMenu::ProcessKey(eKeys k)
      current = Current();
      if(current == actionpos) 
      {
-      if(Interface->Confirm(tr("Disable Sleeptimer?"))) 
+      if(Interface->Confirm(tr("Disable sleeptimer?"))) 
       {
        cPluginSleeptimer::setSleeptimer(0);
        return(osEnd);
