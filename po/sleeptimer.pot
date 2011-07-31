@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: vdrportal_midas at gmx de\n"
-"POT-Creation-Date: 2011-07-31 02:03+0200\n"
+"POT-Creation-Date: 2011-07-31 11:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,20 +108,25 @@ msgstr ""
 msgid "Activate sleeptimer in %i minutes?"
 msgstr ""
 
-#: sleeptimer.c:524 sleeptimer.c:541
+#: sleeptimer.c:527
 #, c-format
-msgid "Sleeptimer in %i minute(s)"
+msgid "Sleeptimer in %i minute"
 msgstr ""
 
-#: sleeptimer.c:528 sleeptimer.c:552 sleeptimer.c:618
+#: sleeptimer.c:531 sleeptimer.c:550
+#, c-format
+msgid "Sleeptimer in %i minutes"
+msgstr ""
+
+#: sleeptimer.c:537 sleeptimer.c:561 sleeptimer.c:627
 msgid "Sleeptimer disabled"
 msgstr ""
 
-#: sleeptimer.c:537
+#: sleeptimer.c:546
 #, c-format
 msgid "Enable sleeptimer in %i minutes?"
 msgstr ""
 
-#: sleeptimer.c:548
+#: sleeptimer.c:557
 msgid "Disable sleeptimer?"
 msgstr ""

@@ -903,6 +903,37 @@ const tI18nPhrase Phrases[] = {
     "",// tur
 #endif
   },
+  { "Disable sleeptimer?",
+	  "Sleeptimer deaktivieren?",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
 
   { NULL }
   };
