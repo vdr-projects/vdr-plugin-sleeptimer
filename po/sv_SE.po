@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VDR 1.5.7\n"
 "Report-Msgid-Bugs-To: vdrportal_midas at gmx de\n"
-"POT-Creation-Date: 2011-07-30 23:07+0200\n"
-"PO-Revision-Date: 2011-07-30 23:07+0200\n"
+"POT-Creation-Date: 2011-07-31 02:03+0200\n"
+"PO-Revision-Date: 2011-07-31 02:03+0200\n"
 "Last-Translator: Tomas Prybil <tomas@prybil.se>\n"
 "Language-Team: <vdr@linuxtv.org>\n"
 "Language: \n"
@@ -110,7 +110,7 @@ msgstr ""
 
 #: sleeptimer.c:524 sleeptimer.c:541
 #, c-format
-msgid "Sleeptimer in %i minutes"
+msgid "Sleeptimer in %i minute(s)"
 msgstr ""
 
 #: sleeptimer.c:528 sleeptimer.c:552 sleeptimer.c:618

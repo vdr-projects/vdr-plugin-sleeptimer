@@ -174,7 +174,7 @@ const tI18nPhrase Phrases[] = {
     "",// TODO
     "",// TODO
     "",// TODO
-    "Aktivoi %i minuutin ajastin?",// Suomi
+    "Aktivoi %d minuutin ajastin?",// Suomi
     "",// Polski
     "",// Espaqol
     "",// Greek
@@ -383,194 +383,8 @@ const tI18nPhrase Phrases[] = {
     "",// tur
 #endif
   },
-  
-  
-  { "Sleeptimer disabled",
-	  "Sleeptimer inaktiv",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  { "Sleeptimer in %i minutes",
-	  "Sleeptimer in %i Minuten",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  
-  
-  { "Confirm",
-	  "Bestätigen",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  
-  { "Use default for autoswitch",
-	  "Automatik mit Standardzeitspanne",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  
-  { "Enable sleeptimer in %i minutes?",
-	  "Sleeptimer in %i Minuten aktivieren?",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  
-  { "Disable",
-	  "Deaktivieren",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",// Polski
-    "",// Espaqol
-    "",// Greek
-    "",// svenska
-    "",// Romaneste
-    "",// Magyar
-    "",// cat
-    "",// rus
-    "",// hrv
-#if VDRVERSNUM >= 10313
-    "",// est
-#endif
-#if VDRVERSNUM >= 10316
-    "",// dan
-#endif
-#if VDRVERSNUM >= 10342
-    "",// cze
-#endif
-#if VDRVERSNUM >= 10502
-    "",// tur
-#endif
-  },  
+
+
   { "Autoswitch",
 	  "Automatisch",
     "",
@@ -601,9 +415,10 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  { "Sleeptimer in %i minutes",
-	  "Sleeptimer in %i Minuten",
+  },
+
+  { "Disable",
+	  "Deaktivieren",
     "",
     "",
     "",
@@ -632,8 +447,9 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  
+  },
+
+
   { "Shutdown",
 	  "Herunterfahren",
     "",
@@ -664,10 +480,11 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  
+  },
+
+
   { "Mute",
-	  "Stumm schalten",
+	  "Stummschalten",
     "",
     "",
     "",
@@ -696,8 +513,240 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  
+  },
+
+
+  { "Execute command",
+	  "Befehl ausführen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Command",
+	  "Befehl",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Use default for autoswitch",
+	  "Standard in Automatik",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Confirm",
+	  "Bestätigen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Sleeptimer in %i minute(s)",
+	  "Sleeptimer in %i Minute(n)",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Sleeptimer disabled",
+	  "Sleeptimer inaktiv",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
+  { "Enable sleeptimer in %i minutes?",
+	  "Sleeptimer in %i Minuten?",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+
   { "Yes",
 	  "Ja",
     "",
@@ -728,8 +777,7 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  
+  },
   { "No",
 	  "Nein",
     "",
@@ -760,9 +808,70 @@ const tI18nPhrase Phrases[] = {
 #if VDRVERSNUM >= 10502
     "",// tur
 #endif
-  },  
-  
-  
+  },
+  { "Command",
+	  "Befehl",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+  { "Execute command",
+	  "Befehl ausführen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
   { NULL }
   };
 

@@ -15,11 +15,11 @@
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8.1-WIP201107302304";
+static const char *VERSION        = "0.8.1-WIP201107310208";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
-int method = 2;
+int method = 0;
 int default_timespan=15;
 int shutdown_time = 0;
 int shutdown_minutes = 2;
@@ -465,8 +465,8 @@ eOSState MainMenu::ProcessKey(eKeys k)
       {
        if (tmp<time(NULL)+61)
        {
-        Skins.Message(mtError,tr("Timespan shorter than 2 minutes"));
-        return osContinue;
+        Skins.Message(mtError,tr("Timespan shorter than 2 minutes")); return
+        osContinue;
        }
              
        cPluginSleeptimer::setSleeptimer(tmp);
@@ -521,7 +521,7 @@ void cPluginSleeptimer::HotkeyAction()
    next_sleepmin_index=-1;
    if (sleepat)
    {
-    msg=msg.sprintf(tr("Sleeptimer in %i minutes"),(int)(difftime(sleepat,now)/60));
+    msg=msg.sprintf(tr("Sleeptimer in %i minute(s)"),(int)(difftime(sleepat,now)/60));
    }
    else
    {
@@ -538,7 +538,7 @@ void cPluginSleeptimer::HotkeyAction()
     }
     else
     {
-     msg=msg.sprintf(tr("Sleeptimer in %i minutes"), autoswitch_vals[next_sleepmin_index]);
+     msg=msg.sprintf(tr("Sleeptimer in %i minute(s)"), autoswitch_vals[next_sleepmin_index]);
     }
    } 
    else

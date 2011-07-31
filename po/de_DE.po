@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VDR 1.5.7\n"
 "Report-Msgid-Bugs-To: vdrportal_midas at gmx de\n"
-"POT-Creation-Date: 2011-07-30 23:07+0200\n"
-"PO-Revision-Date: 2011-07-30 23:07+0200\n"
+"POT-Creation-Date: 2011-07-31 02:03+0200\n"
+"PO-Revision-Date: 2011-07-31 02:03+0200\n"
 "Last-Translator: Klaus Schmidinger <kls@tvdr.de>\n"
 "Language-Team: <vdr@linuxtv.org>\n"
 "Language: \n"
@@ -51,11 +51,11 @@ msgstr "Herunterfahren"
 
 #: sleeptimer.c:320
 msgid "Mute"
-msgstr "Stumm schalten"
+msgstr "Stummschalten"
 
 #: sleeptimer.c:321
 msgid "Execute command"
-msgstr ""
+msgstr "Befehl ausführen"
 
 #: sleeptimer.c:325
 msgid "Default Timespan [min]"
@@ -67,7 +67,7 @@ msgstr "Aktion"
 
 #: sleeptimer.c:327
 msgid "Command"
-msgstr ""
+msgstr "Befehl"
 
 #: sleeptimer.c:328 sleeptimer.c:329
 msgid "No"
@@ -75,7 +75,7 @@ msgstr "Nein"
 
 #: sleeptimer.c:328
 msgid "Use default for autoswitch"
-msgstr "Automatik mit Standardzeitspanne"
+msgstr "Standard in Automatik"
 
 #: sleeptimer.c:328 sleeptimer.c:329
 msgid "Yes"
@@ -83,7 +83,7 @@ msgstr "Ja"
 
 #: sleeptimer.c:329
 msgid "Confirm"
-msgstr "BestÃ¤tigen"
+msgstr "Bestätigen"
 
 #: sleeptimer.c:409
 msgid "Going to sleep in about one minute"
@@ -100,7 +100,7 @@ msgstr "Sleeptimer um %i:%.2i aktivieren?"
 
 #: sleeptimer.c:468
 msgid "Timespan shorter than 2 minutes"
-msgstr "Zeitspanne kÃ¼rzer 2 Minuten"
+msgstr "Zeitspanne kürzer 2 Minuten"
 
 #: sleeptimer.c:481
 #, c-format
@@ -109,8 +109,8 @@ msgstr "Sleeptimer in %i Minuten aktivieren?"
 
 #: sleeptimer.c:524 sleeptimer.c:541
 #, c-format
-msgid "Sleeptimer in %i minutes"
-msgstr "Sleeptimer in %i Minuten"
+msgid "Sleeptimer in %i minute(s)"
+msgstr "Sleeptimer in %i Minute(n)"
 
 #: sleeptimer.c:528 sleeptimer.c:552 sleeptimer.c:618
 msgid "Sleeptimer disabled"
@@ -119,7 +119,7 @@ msgstr "Sleeptimer inaktiv"
 #: sleeptimer.c:537
 #, c-format
 msgid "Enable sleeptimer in %i minutes?"
-msgstr "Sleeptimer in %i Minuten aktivieren?"
+msgstr "Sleeptimer in %i Minuten?"
 
 #: sleeptimer.c:548
 msgid "Disable sleeptimer?"
