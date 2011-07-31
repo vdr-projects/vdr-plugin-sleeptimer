@@ -648,8 +648,40 @@ const tI18nPhrase Phrases[] = {
   },
 
 
-  { "Sleeptimer in %i minute(s)",
-	  "Sleeptimer in %i Minute(n)",
+  { "Sleeptimer in %i minute",
+	  "Sleeptimer in %i Minute",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",// Polski
+    "",// Espaqol
+    "",// Greek
+    "",// svenska
+    "",// Romaneste
+    "",// Magyar
+    "",// cat
+    "",// rus
+    "",// hrv
+#if VDRVERSNUM >= 10313
+    "",// est
+#endif
+#if VDRVERSNUM >= 10316
+    "",// dan
+#endif
+#if VDRVERSNUM >= 10342
+    "",// cze
+#endif
+#if VDRVERSNUM >= 10502
+    "",// tur
+#endif
+  },
+
+  { "Sleeptimer in %i minutes",
+	  "Sleeptimer in %i Minuten",
     "",
     "",
     "",

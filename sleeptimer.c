@@ -15,7 +15,7 @@
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8.1-WIP201107310208";
+static const char *VERSION        = "0.8.1";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
@@ -521,7 +521,16 @@ void cPluginSleeptimer::HotkeyAction()
    next_sleepmin_index=-1;
    if (sleepat)
    {
-    msg=msg.sprintf(tr("Sleeptimer in %i minute(s)"),(int)(difftime(sleepat,now)/60));
+    int sleepint=(int)(difftime(sleepat,now)/60);
+    if (sleepint==1)
+    {
+     msg=msg.sprintf(tr("Sleeptimer in %i minute"),sleepint);
+    }
+    else
+    {
+     msg=msg.sprintf(tr("Sleeptimer in %i minutes"),sleepint);
+    }
+    
    }
    else
    {
@@ -538,7 +547,7 @@ void cPluginSleeptimer::HotkeyAction()
     }
     else
     {
-     msg=msg.sprintf(tr("Sleeptimer in %i minute(s)"), autoswitch_vals[next_sleepmin_index]);
+     msg=msg.sprintf(tr("Sleeptimer in %i minutes"), autoswitch_vals[next_sleepmin_index]);
     }
    } 
    else

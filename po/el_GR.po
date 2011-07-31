@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VDR 1.5.7\n"
-"Report-Msgid-Bugs-To: vdrportal_midas at gmx de\n"
-"POT-Creation-Date: 2011-07-31 02:03+0200\n"
-"PO-Revision-Date: 2011-07-31 02:03+0200\n"
+"Report-Msgid-Bugs-To: <vdrportal_midas <at> gmx <dot> de>\n"
+"POT-Creation-Date: 2011-07-31 09:03+0200\n"
+"PO-Revision-Date: 2011-07-31 08:58+0200\n"
 "Last-Translator: Dimitrios Dimitrakos <mail@dimitrios.de>\n"
 "Language-Team: <vdr@linuxtv.org>\n"
 "Language: \n"
@@ -16,111 +16,89 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-7\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: sleeptimer.c:20
 msgid "Sleeptimer"
 msgstr ""
 
-#: sleeptimer.c:215
 msgid "Autoswitch"
 msgstr ""
 
-#: sleeptimer.c:215
 msgid "Disable"
 msgstr ""
 
-#: sleeptimer.c:218
 msgid "Not active"
 msgstr ""
 
-#: sleeptimer.c:221 sleeptimer.c:242
 msgid "Shutdown [min]"
 msgstr ""
 
-#: sleeptimer.c:222 sleeptimer.c:243
 msgid "Shutdown (time)"
 msgstr ""
 
-#: sleeptimer.c:240
 #, c-format
 msgid "Disable sleeptimer in %d minutes"
 msgstr ""
 
-#: sleeptimer.c:319
 msgid "Shutdown"
 msgstr ""
 
-#: sleeptimer.c:320
 msgid "Mute"
 msgstr ""
 
-#: sleeptimer.c:321
 msgid "Execute command"
 msgstr ""
 
-#: sleeptimer.c:325
 msgid "Default Timespan [min]"
 msgstr ""
 
-#: sleeptimer.c:326
 msgid "Action"
 msgstr ""
 
-#: sleeptimer.c:327
 msgid "Command"
 msgstr ""
 
-#: sleeptimer.c:328 sleeptimer.c:329
-msgid "No"
-msgstr ""
-
-#: sleeptimer.c:328
 msgid "Use default for autoswitch"
 msgstr ""
 
-#: sleeptimer.c:328 sleeptimer.c:329
+msgid "No"
+msgstr ""
+
 msgid "Yes"
 msgstr ""
 
-#: sleeptimer.c:329
 msgid "Confirm"
 msgstr ""
 
-#: sleeptimer.c:409
 msgid "Going to sleep in about one minute"
 msgstr ""
 
-#: sleeptimer.c:449
 msgid "Disable Sleeptimer?"
 msgstr ""
 
-#: sleeptimer.c:462
 #, c-format
 msgid "Activate sleeptimer at %i:%.2i?"
 msgstr ""
 
-#: sleeptimer.c:468
 msgid "Timespan shorter than 2 minutes"
 msgstr ""
 
-#: sleeptimer.c:481
 #, c-format
 msgid "Activate sleeptimer in %i minutes?"
 msgstr ""
 
-#: sleeptimer.c:524 sleeptimer.c:541
 #, c-format
-msgid "Sleeptimer in %i minute(s)"
+msgid "Sleeptimer in %i minute"
 msgstr ""
 
-#: sleeptimer.c:528 sleeptimer.c:552 sleeptimer.c:618
+#, c-format
+msgid "Sleeptimer in %i minutes"
+msgstr ""
+
 msgid "Sleeptimer disabled"
 msgstr ""
 
-#: sleeptimer.c:537
 #, c-format
 msgid "Enable sleeptimer in %i minutes?"
 msgstr ""
 
-#: sleeptimer.c:548
 msgid "Disable sleeptimer?"
 msgstr ""
