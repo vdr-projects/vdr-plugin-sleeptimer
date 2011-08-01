@@ -15,7 +15,7 @@
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8.1";
+static const char *VERSION        = "0.8.2-WIP201108012259";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
@@ -25,7 +25,7 @@ int shutdown_time = 0;
 int shutdown_minutes = 2;
 bool start_w_default=false;
 bool do_confirm=false;
-char* command = (char*)"/sbin/poweroff";
+char command[512] = "/sbin/poweroff";
 bool process_red=false;
 
 #define ARRAYLENGTH 9
@@ -163,7 +163,7 @@ bool cPluginSleeptimer::ProcessArgs(int argc, char *argv[])
 	while((c = getopt(argc, argv, "e:")) != -1 ) {
 		switch(c) {
 			case 'e': 
-				command = (char*)optarg;
+				strncpy(command, optarg, sizeof(command) - 1);
 				break;
 			default: return false;
 		}
@@ -266,7 +266,7 @@ private:
 	int timespan;
 	int setup_start_w_default;
 	int setup_do_confirm;
-	char* setup_command;
+	char setup_command[512];
 	const char* methods[3];
 public:
 	cMenuSetupSleeptimer(void);
@@ -301,7 +301,7 @@ bool cPluginSleeptimer::SetupParse(const char *Name, const char *Value)
            else if (!strcasecmp(Name,"Confirmation"))
             do_confirm=atoi(Value);
            else if (!strcasecmp(Name,"Command"))
-            command=(char*)Value;
+	strncpy(command, Value, sizeof(command) - 1);
  else return false;
  return true;
 }
@@ -313,7 +313,7 @@ cMenuSetupSleeptimer::cMenuSetupSleeptimer(void)
  new_method = method;
  timespan = default_timespan;
  setup_start_w_default=start_w_default;
- setup_command=command;
+ strncpy(setup_command, command, sizeof(setup_command) - 1);
  setup_do_confirm=do_confirm;
  
  methods[0]=tr("Shutdown");
@@ -324,7 +324,7 @@ cMenuSetupSleeptimer::cMenuSetupSleeptimer(void)
  
  Add(new cMenuEditIntItem(tr("Default Timespan [min]"),  &timespan, 2));
  Add(new cMenuEditStraItem(tr("Action"), &new_method, 3, methods)); 
- Add(new cMenuEditStrItem(tr("Command"), setup_command, 255, allowed_chars));
+ Add(new cMenuEditStrItem(tr("Command"), setup_command, 511, allowed_chars));
  Add(new cMenuEditBoolItem(tr("Use default for autoswitch"), &setup_start_w_default, tr("No"), tr("Yes")));
  Add(new cMenuEditBoolItem(tr("Confirm"), &setup_do_confirm, tr("No"), tr("Yes")));
 }
@@ -333,7 +333,8 @@ void cMenuSetupSleeptimer::Store(void)
 {
  SetupStore("Method", method = new_method);
  SetupStore("DefaultTimespan", default_timespan=timespan);
- SetupStore("Command"), command=(char*)setup_command;
+ strncpy(command, setup_command, sizeof(command) - 1);
+ SetupStore("Command", command);
  SetupStore("StartWithDefault", start_w_default=setup_start_w_default);
  SetupStore("Confirmation", do_confirm=setup_do_confirm);
  if (start_w_default) 
