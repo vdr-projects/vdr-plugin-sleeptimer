@@ -15,7 +15,11 @@
  #include "i18n.h"
 #endif 
 
-static const char *VERSION        = "0.8.2-WIP201108012259";
+#ifndef COMMANDLENGTH
+ #define COMMANDLENGTH 512
+#endif
+
+static const char *VERSION        = "0.8.2";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
@@ -25,7 +29,8 @@ int shutdown_time = 0;
 int shutdown_minutes = 2;
 bool start_w_default=false;
 bool do_confirm=false;
-char command[512] = "/sbin/poweroff";
+char command[COMMANDLENGTH] = "/sbin/poweroff";
+char cli_command[COMMANDLENGTH]="";
 bool process_red=false;
 
 #define ARRAYLENGTH 9
@@ -163,7 +168,7 @@ bool cPluginSleeptimer::ProcessArgs(int argc, char *argv[])
 	while((c = getopt(argc, argv, "e:")) != -1 ) {
 		switch(c) {
 			case 'e': 
-				strncpy(command, optarg, sizeof(command) - 1);
+				strncpy(cli_command, optarg, sizeof(cli_command) - 1);
 				break;
 			default: return false;
 		}
@@ -266,7 +271,7 @@ private:
 	int timespan;
 	int setup_start_w_default;
 	int setup_do_confirm;
-	char setup_command[512];
+	char setup_command[COMMANDLENGTH];
 	const char* methods[3];
 public:
 	cMenuSetupSleeptimer(void);
@@ -324,7 +329,19 @@ cMenuSetupSleeptimer::cMenuSetupSleeptimer(void)
  
  Add(new cMenuEditIntItem(tr("Default Timespan [min]"),  &timespan, 2));
  Add(new cMenuEditStraItem(tr("Action"), &new_method, 3, methods)); 
- Add(new cMenuEditStrItem(tr("Command"), setup_command, 511, allowed_chars));
+ 
+ cMenuEditStrItem *commanditem;
+ if (cli_command[0]=='\0')
+ {
+  commanditem = new cMenuEditStrItem(tr("Command"), setup_command, COMMANDLENGTH, allowed_chars);
+ }
+ else
+ {
+  commanditem = new cMenuEditStrItem(tr("Command"), cli_command, COMMANDLENGTH, allowed_chars);
+  commanditem->SetSelectable(false);
+ }
+ Add(commanditem);
+  
  Add(new cMenuEditBoolItem(tr("Use default for autoswitch"), &setup_start_w_default, tr("No"), tr("Yes")));
  Add(new cMenuEditBoolItem(tr("Confirm"), &setup_do_confirm, tr("No"), tr("Yes")));
 }

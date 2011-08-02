@@ -1,7 +1,14 @@
+vdr-plugin-sleeptimer (0.8.2) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release.
+
+ -- Midas <vdrportal_midas <at> gmx <dot> de>  Tue, 02 Aug 2011 02:48:53 +0200
+
 vdr-plugin-sleeptimer (0.8.1) experimental; urgency=low
 
   * Non-maintainer upload.
-  * New Zpstream release
+  * New upstream release
 
  -- Midas <vdrportal_midas at gmx dot de>  Sun, 31 Jul 2011 09:08:16 +0200
 
