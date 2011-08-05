@@ -6,10 +6,11 @@
  * $Id$
  */
 
+#include <getopt.h>
+
 #include <vdr/plugin.h>
 #include <vdr/interface.h>
 #include <vdr/device.h>
-#include <vdr/status.h>
 
 #if VDRVERSNUM < 10507
  #include "i18n.h"
@@ -19,7 +20,7 @@
  #define COMMANDLENGTH 512
 #endif
 
-static const char *VERSION        = "0.8.2";
+static const char *VERSION        = "0.8.3-WIP201108060024";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
@@ -161,18 +162,27 @@ const char *cPluginSleeptimer::CommandLineHelp(void)
 	return "  -e command   shutdown command (default: /sbin/poweroff)\n";
 }
 
-bool cPluginSleeptimer::ProcessArgs(int argc, char *argv[])
+bool cPluginSleeptimer::ProcessArgs (int argc, char *argv[])
 {
-  // Implement command line argument processing here if applicable.
-	int c;
-	while((c = getopt(argc, argv, "e:")) != -1 ) {
-		switch(c) {
-			case 'e': 
-				strncpy(cli_command, optarg, sizeof(cli_command) - 1);
-				break;
-			default: return false;
-		}
-	}
+  static const char short_options[] = "e:";
+
+  static const struct option long_options[] =
+  {
+    { "execute", optional_argument, NULL, 'e' },
+    {NULL}
+  };
+
+  int c=0;
+  while ((c = getopt_long(argc,argv,short_options,long_options,NULL))!=-1)
+  {
+    switch (c)
+    {
+      case 'e': 
+   		strncpy(cli_command, optarg, sizeof(cli_command) - 1);
+		break;
+      default: return false;
+    }
+  }
   return true;
 }
 
