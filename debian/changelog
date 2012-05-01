@@ -1,3 +1,9 @@
+vdr-plugin-sleeptimer (0.8.3-201205011650dev) experimental; urgency=low
+
+  * Makefile adaption concerning i18n. Thx to idl0r.
+
+ -- Midas <vdrportal_midas <at> gmx <dot> de>  Tue, 01 May 2012 16:51:46 +0200
+
 vdr-plugin-sleeptimer (0.8.3-201205011141dev) experimental; urgency=low
 
   * added missing include to i18n.h. thanx to nox again
