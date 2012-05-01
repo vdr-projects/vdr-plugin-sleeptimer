@@ -10,6 +10,7 @@
 #define _I18N__H
 
 #include <vdr/i18n.h>
+#include <vdr/config.h>
 
 extern const tI18nPhrase Phrases[];
 
