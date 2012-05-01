@@ -20,7 +20,7 @@ APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDI
 ### The C++ compiler and options:
 
 CXX      ?= g++
-CXXFLAGS ?= -fPIC -O2 -Wall -Woverloaded-virtual
+CXXFLAGS ?= -fPIC -O2 -Wall -Werror=overloaded-virtual
 
 ### The directory environment:
 

@@ -19,7 +19,7 @@
  #define COMMANDLENGTH 512
 #endif
 
-static const char *VERSION        = "0.8.3-WIP201205011120";
+static const char *VERSION        = "0.8.3-201205011141dev";
 static const char *DESCRIPTION    = "Sleeptimer for VDR";
 static const char *MAINMENUENTRY  = tr("Sleeptimer");
 
