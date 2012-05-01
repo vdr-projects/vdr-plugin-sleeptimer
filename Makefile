@@ -20,7 +20,7 @@ APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDI
 ### The C++ compiler and options:
 
 CXX      ?= g++
-CXXFLAGS ?= -fPIC -O2 -Wall -Werror=overloaded-virtual
+CXXFLAGS ?= -fPIC -O2 -Wall
 
 ### The directory environment:
 
@@ -50,7 +50,18 @@ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
 
 ### The object files (add further files here):
 
-OBJS = $(PLUGIN).o i18n.o
+OBJS = $(PLUGIN).o
+
+VDRVERSNUM = $(shell grep 'define VDRVERSNUM ' $(VDRDIR)/config.h | awk '{ print $$3 }' | sed -e 's/"//g')
+
+VDRI18NCOMPAT = $(shell [ ${VDRVERSNUM} -lt 10727 ] && echo 1)
+
+ifeq ($(VDRI18NCOMPAT),1)
+OBJS += i18n.o
+CXXFLAGS += -Woverloaded-virtual
+else
+CXXFLAGS += -Werror=overloaded-virtual
+endif
 
 ### Implicit rules:
 
