@@ -1,17 +1,23 @@
-/*
- * i18n.h: Internationalization
+/**
+ * based on i18n.h,v 1.1.1.1 2006/02/26 14:11:02 lordjaxom
  *
- * See the README file for copyright information and how to reach the author.
+ * version by Midas
  *
- * $Id$
  */
 
-#ifndef _I18N__H
-#define _I18N__H
+#ifndef __SLEEPTIMER_I18N_H
+#define __SLEEPTIMER_I18N_H
 
 #include <vdr/i18n.h>
 #include <vdr/config.h>
 
+#if VDRVERSNUM < 10507
+
+#define trNOOP(s) (s)
+#define trVDR(s) tr(s)
+
 extern const tI18nPhrase Phrases[];
 
-#endif //_I18N__H
+#endif
+
+#endif 
